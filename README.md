@@ -27,14 +27,14 @@ Antes de executar o projeto, certifique-se de que os seguintes requisitos estão
 
 ### 📌 Python 3.x  
 Verifique a instalação com o comando:
-```bash
+
 python --version
 📌 MySQL
 Verifique a instalação com o comando: mysql --version
 📌 Bibliotecas Python
 Instale as bibliotecas necessárias com o comando: pip install pdfplumber mysql-connector-python
 
-####📂 Estrutura do Projeto
+📂 Estrutura do Projeto
 O projeto contém os seguintes arquivos:
 
 📌 extrair_dados.py → Script Python para extrair os dados do PDF e carregar no MySQL.
