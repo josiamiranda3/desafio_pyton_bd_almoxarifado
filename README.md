@@ -27,7 +27,7 @@ Antes de executar o projeto, certifique-se de que os seguintes requisitos estão
 
 ### 📌 Python 3.x  
 Verifique a instalação com o comando:
-
+```bash
 python --version
 📌 MySQL
 Verifique a instalação com o comando: mysql --version
