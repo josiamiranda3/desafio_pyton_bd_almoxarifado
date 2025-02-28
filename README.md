@@ -70,6 +70,47 @@ Dados carregados no banco de dados com sucesso!
 Conexão ao MySQL fechada.
 
 
+3️⃣ Verificação dos Dados no Banco de Dados
+Após a execução, conecte-se ao MySQL e execute:
+
+SELECT * FROM Grupo;
+SELECT * FROM ItemAlmoxarifado;
+
+✅ Resultado esperado:
+
+A tabela Grupo deve conter os grupos extraídos do PDF.
+A tabela ItemAlmoxarifado deve conter os itens associados aos grupos, com o id_grupo correto.
+
+🛢️ Estrutura do Banco de Dados
+O banco de dados db_almoxarifado possui duas tabelas principais:
+
+📌 Tabela Grupo
+Coluna	         Tipo	                      Descrição
+id_grupo	INT (PK, AUTO_INCREMENT)	Identificador único do grupo
+codigo_grupo	VARCHAR(4)	Código do grupo
+denominacao_grupo	VARCHAR(255)	Nome ou descrição do grupo
+
+
+📌 Tabela ItemAlmoxarifado
+
+
+Coluna	           Tipo	               Descrição
+id_item	INT (PK, AUTO_INCREMENT)	Identificador único do item
+codigo_item	VARCHAR(20)	Código do item
+denominacao_item	VARCHAR(255)	Nome ou descrição do item
+unidade_medida	VARCHAR(50)	Unidade de medida do item
+id_grupo	INT (FK)	Referência para id_grupo na tabela Grupo
+
+❌ Tratamento de Erros:
+
+Rollback automático: Se houver erro, as transações são desfeitas para evitar inconsistências.
+Mensagens no console: O código exibe mensagens de erro detalhadas para ajudar na depuração.
+
+📌 Considerações Finais:
+
+✔️ PDF com Inconsistências: O código foi projetado para lidar com erros no formato do PDF, como cabeçalhos ou rodapés indesejados.
+✔️ Idempotência: O script pode ser executado várias vezes sem duplicar dados.
+✔️ Documentação Completa: Este README fornece todas as instruções necessárias para configurar e executar o projeto.
 
 
 
