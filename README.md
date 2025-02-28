@@ -84,22 +84,27 @@ A tabela ItemAlmoxarifado deve conter os itens associados aos grupos, com o id_g
 🛢️ Estrutura do Banco de Dados
 O banco de dados db_almoxarifado possui duas tabelas principais:
 
-📌 Tabela Grupo
-Coluna	         Tipo	                      Descrição
-id_grupo	INT (PK, AUTO_INCREMENT)	Identificador único do grupo
-codigo_grupo	VARCHAR(4)	Código do grupo
-denominacao_grupo	VARCHAR(255)	Nome ou descrição do grupo
+## 🛢️ Estrutura do Banco de Dados
+
+O banco de dados **`db_almoxarifado`** possui duas tabelas principais:
+
+### 📌 Tabela `Grupo`
+| Coluna             | Tipo                     | Descrição                                |
+|--------------------|-------------------------|------------------------------------------|
+| `id_grupo`        | INT (PK, AUTO_INCREMENT) | Identificador único do grupo            |
+| `codigo_grupo`    | VARCHAR(4)               | Código do grupo                         |
+| `denominacao_grupo` | VARCHAR(255)           | Nome ou descrição do grupo              |
+
+### 📌 Tabela `ItemAlmoxarifado`
+| Coluna             | Tipo                     | Descrição                                |
+|--------------------|-------------------------|------------------------------------------|
+| `id_item`         | INT (PK, AUTO_INCREMENT) | Identificador único do item             |
+| `codigo_item`     | VARCHAR(20)              | Código do item                          |
+| `denominacao_item` | VARCHAR(255)            | Nome ou descrição do item               |
+| `unidade_medida`  | VARCHAR(50)              | Unidade de medida do item               |
+| `id_grupo`        | INT (FK)                 | Referência para `id_grupo` na tabela `Grupo` |
 
 
-📌 Tabela ItemAlmoxarifado
-
-
-Coluna	           Tipo	               Descrição
-id_item	INT (PK, AUTO_INCREMENT)	Identificador único do item
-codigo_item	VARCHAR(20)	Código do item
-denominacao_item	VARCHAR(255)	Nome ou descrição do item
-unidade_medida	VARCHAR(50)	Unidade de medida do item
-id_grupo	INT (FK)	Referência para id_grupo na tabela Grupo
 
 ❌ Tratamento de Erros:
 
